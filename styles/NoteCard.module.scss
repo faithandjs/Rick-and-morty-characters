@@ -1,0 +1,20 @@
+@import "./colors";
+
+.h3 {
+}
+
+.p1 {
+}
+.p2 {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 14px;
+  letter-spacing: 1.1px;
+  span {
+    padding-left: 7px;
+  }
+  span:first-child {
+  }
+  span:nth-child(2) {
+  }
+}
