@@ -1,16 +1,26 @@
-export interface noteProp {
+export interface characterProp {
+  gender: string;
   id: number;
-  createdAt: {
-    date: string;
-    time: string;
+  image: string;
+  location: {
+    dimension: string;
+    name: string;
   };
-  heading: string;
-  content: string;
+  name: string;
+  origin: {
+    dimension: string;
+    name: string;
+  };
+  species: string;
+  status: string;
+  type: string;
 }
-export interface notesArray {
-  notes: noteProp[];
+export interface characterPropProp {
+  character: characterProp;
 }
-/*export*/
-export interface notePropProp {
-  note: noteProp;
+
+export enum lifeStatus{
+  ALIVE = 'Alive',
+  DEAD = 'Dead',
+  UNKNOWN = 'unknown',
 }

@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;700;800&display=swap');
+@import './colors';
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background-color: $blueBG;
+  color: #fff;
+  font-family: "Cinzel", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, serif;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+.imgBox {
+  position: relative;
+  span,
+  img {
+    width: 100% !important;
+    height: auto !important;
+    position: relative !important;
+    top: unset !important;
+    bottom: unset !important;
+    left: unset !important;
+    right: unset !important;
+  }
+}

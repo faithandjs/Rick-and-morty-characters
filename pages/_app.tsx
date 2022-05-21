@@ -1,10 +1,8 @@
-import '../styles/globals.css'
+import '../styles/globals.scss'
 import type { AppProps } from 'next/app'
-import { store } from '../app/store'
-import {Provider} from 'react-redux'
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return<Provider store={store}> <Component {...pageProps} /></Provider>
+  return <Component {...pageProps} />
 }
 
 export default MyApp
