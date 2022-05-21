@@ -13,6 +13,12 @@ const Note: NextPage<any> = (character) => {
   const { id, gender, image, location, name, origin, species, status, type } =
     character.character;
   let style: bg;
+  console.log(typeof origin.dimension, character.character);
+  console.log(
+    origin.dimension !== "",
+    origin.dimension !== null,
+    typeof origin.dimension !== "object"
+  );
   const settingStat = () => {
     switch (status) {
       case lifeStatus.ALIVE:
@@ -42,16 +48,26 @@ const Note: NextPage<any> = (character) => {
           </li>
           <li>
             <span>species:</span> {species}
-            {type !== "" ?? `, ${type}`}
+            {type !== "" && type !== null && typeof type !== "object"? `, ${type}` : " "}
           </li>
         </div>
 
         <div>
           <li>
-            <span>origin:</span> {origin.name}{origin.dimension !== "" ?? `, ${origin.dimension}`}
+            <span>origin:</span> {origin.name}
+            {origin.dimension !== "" &&
+            origin.dimension !== null &&
+            typeof origin.dimension !== "object"
+              ? `, ${origin.dimension}`
+              : " "}
           </li>
           <li>
-            <span>location:</span> {location.name}{location.dimension !== "" ?? `, ${location.dimension}`}
+            <span>location:</span> {location.name}
+            {location.dimension !== ""  &&
+            location.dimension !== null &&
+            typeof location.dimension !== "object"
+              ? `, ${location.dimension}`
+              : " "}
           </li>
         </div>
       </ul>
