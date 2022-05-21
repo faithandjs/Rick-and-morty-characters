@@ -1,9 +1,11 @@
 .imgBox {
   width: clamp(150px, 80%, 340px) ;
-  height: -webkit-fill-available;
+  height: max-content;
   margin: auto auto 40px;
+    border-width: 3px !important;
+    border-style: dashed !important;
   img {
-    border: 5px dotted rgb(255, 255, 255) !important;
+   // border-color:rgb(255, 255, 255) !important;
   }
 }
 .box {

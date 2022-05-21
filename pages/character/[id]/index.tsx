@@ -1,18 +1,35 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { characterPropProp } from "../../../type";
 import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
-import { characterProp } from "../../../type";
+import { characterProp, lifeStatus } from "../../../type";
 import Image from "next/image";
 import styles from "../../../styles/Details.module.scss";
 import Header from "../../../components/Header";
+
+interface bg {
+  borderColor: string;
+}
 const Note: NextPage<any> = (character) => {
   const { id, gender, image, location, name, origin, species, status, type } =
     character.character;
-  
+  let style: bg;
+  const settingStat = () => {
+    switch (status) {
+      case lifeStatus.ALIVE:
+        style = { borderColor: "rgb(30, 214, 23)" };
+        break;
+      case lifeStatus.DEAD:
+        style = { borderColor: "rgb(231, 27, 27)" };
+        break;
+      case lifeStatus.UNKNOWN:
+        style = { borderColor: "rgb(221, 207, 6)" };
+    }
+    return style;
+  };
   return (
     <div className={styles.box}>
-      <Header title={`${name}`} />      <h2>{name}</h2>
-      <div className={`${styles.imgBox} imgBox`}>
+      <Header title={`${name}`} /> <h2>{name}</h2>
+      <div className={`${styles.imgBox} imgBox`} style={settingStat()}>
         <Image src={image} alt={`${name}`} layout="fill" />
       </div>
       <ul>
@@ -24,7 +41,8 @@ const Note: NextPage<any> = (character) => {
             <span>status:</span> {status}
           </li>
           <li>
-            <span>species:</span> {species}{type !== ''??`, ${type}`}
+            <span>species:</span> {species}
+            {type !== "" ?? `, ${type}`}
           </li>
         </div>
 

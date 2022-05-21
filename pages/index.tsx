@@ -71,32 +71,7 @@ export const getStaticProps: GetStaticProps = async () => {
   };
   const res = await reponse(1);
   const res1 = await reponse(2);
-  /* client.query({
-    query: gql`
-      query {
-        characters(page: 2) {
-          results {
-            id
-            name
-            status
-            species
-            type
-            gender
-            origin {
-              name
-              dimension
-            }
-            location {
-              name
-              dimension
-            }
-            image
-          }
-        }
-      }
-    `,
-  });*/
-  const res2 = await reponse(3);
+ const res2 = await reponse(3);
 
   const characters: characterProp[] =
   /*  localStorage.getItem("rick-and-morty-data") &&

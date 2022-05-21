@@ -33,8 +33,10 @@ const CharacterCard: NextPage<characterPropProp> = ({ character }) => {
             <Image src={image} alt={`${name}`} layout="fill" />
           </div>
           <div className={styles.texts}>
-            <h3 className={styles.h3}>{name}</h3>
-            <p className={styles.p1}>{species}</p>
+            <div>
+              <h3 className={styles.h3}>{name}</h3>
+              <p className={styles.p1}>{species}</p>
+            </div>
             <p className={styles.p2}>{status}</p>
           </div>
         </div>
