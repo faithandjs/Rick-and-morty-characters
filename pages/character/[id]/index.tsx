@@ -48,10 +48,10 @@ const Note: NextPage<any> = (character) => {
 
         <div>
           <li>
-            <span>origin:</span> {origin.name}, {origin.dimension}
+            <span>origin:</span> {origin.name}{origin.dimension !== "" ?? `, ${origin.dimension}`}
           </li>
           <li>
-            <span>location:</span> {location.name}, {location.dimension}
+            <span>location:</span> {location.name}{location.dimension !== "" ?? `, ${location.dimension}`}
           </li>
         </div>
       </ul>
