@@ -8,18 +8,7 @@ import Header from "../../../components/Header";
 const Note: NextPage<any> = (character) => {
   const { id, gender, image, location, name, origin, species, status, type } =
     character.character;
-  console.log(
-    character,
-    id,
-    gender,
-    image,
-    location,
-    name,
-    origin,
-    species,
-    status,
-    type
-  );
+  
   return (
     <div className={styles.box}>
       <Header title={`${name}`} />      <h2>{name}</h2>
@@ -57,8 +46,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
     uri: "https://rickandmortyapi.com/graphql",
     cache: new InMemoryCache(),
   });
-  //context.params.id
-  console.log(context);
   const character = await client.query({
     query: gql`
     query {
@@ -174,7 +161,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   ];
   const ids = characters.map((char) => char.id);
   const paths = ids.map((id) => ({ params: { id: id.toString() } }));
-  console.log(ids, paths);
+
   return {
     paths,
     fallback: false,

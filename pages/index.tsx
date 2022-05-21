@@ -10,14 +10,6 @@ import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
 import Header from "../components/Header";
 
 const Home: NextPage<any> = ({ characters }) => {
-  /* const characters: characterProp[] = [
-    ...res.data.characters.results,
-    ...res1.data.characters.results,
-    ...res2.data.characters.results,
-  ];*/
-  console.log(characters, typeof characters);
-
- // localStorage.setItem("rick-and-morty-data", JSON.stringify({ characters }));
   return (
     <div className={styles.container}>
     <Header title='Rick and Morty'/>
@@ -47,7 +39,6 @@ export const getStaticProps: GetStaticProps = async () => {
   });
   const reponse = (n: number) => {
     try {
-      console.log("try");
       return client.query({
         query: gql`
     query {
