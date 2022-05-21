@@ -27,7 +27,7 @@ const CharacterCard: NextPage<characterPropProp> = ({ character }) => {
   };
   return (
     <Link href="/character/[id]" as={`/character/${id}`}>
-      <a>
+      <a href={`/character/${id}`}>
         <div className={styles.content}>
           <div className={`${styles.imgBox} imgBox `}>
             <Image src={image} alt={`${name}`} layout="fill" />
