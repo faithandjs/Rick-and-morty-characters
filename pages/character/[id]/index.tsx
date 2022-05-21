@@ -13,12 +13,6 @@ const Note: NextPage<any> = (character) => {
   const { id, gender, image, location, name, origin, species, status, type } =
     character.character;
   let style: bg;
-  console.log(typeof origin.dimension, character.character);
-  console.log(
-    origin.dimension !== "",
-    origin.dimension !== null,
-    typeof origin.dimension !== "object"
-  );
   const settingStat = () => {
     switch (status) {
       case lifeStatus.ALIVE:
