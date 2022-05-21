@@ -23,8 +23,6 @@
     font-weight: 800;
   }
 }
-.p1 {
-}
 .p2 {
   display: flex;
   justify-content: flex-end;
@@ -33,11 +31,6 @@
   align-items: flex-end;
 
   padding-right: 15px;
-
-  span:first-child {
-  }
-  span:nth-child(2) {
-  }
 }
 .status {
   height: 6px;
@@ -52,8 +45,21 @@
 .unknown {
   background-color: $unknown;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 628px) {
   .texts {
     padding: 7px;
+    h3,
+    p {
+      font-size: smaller;
+    }
+  }
+  .p2 {
+    padding-right: 15px;
+  }
+}
+
+@media screen and (max-width: 512px) {
+  .imgBox {
+    display: contents;
   }
 }
